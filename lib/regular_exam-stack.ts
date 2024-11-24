@@ -79,7 +79,9 @@ export class RegularExamStack extends cdk.Stack {
     });
 
     const uploadResource: cdk.aws_apigateway.Resource = api.root.addResource('upload');
-    uploadResource.addMethod('POST', new aws_apigateway.LambdaIntegration(fileProcessorLambda));
+    uploadResource.addMethod('POST', new aws_apigateway.LambdaIntegration(fileProcessorLambda)
+    );
+
 
 // Add S3 Event Notification for Lambda
     fileBucket.addEventNotification(
